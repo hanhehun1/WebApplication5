@@ -1,0 +1,22 @@
+﻿@model WebApplication5.Models.Category
+@{ ViewBag.Title = "CreateCategory"; }
+
+<h2>Create Category</h2>
+@Html.ActionLink("Back", "CategoryView", "Staff", null, new { @class = "btn btn-primary" })
+<br />
+@using (Html.BeginForm("CreateCategory", "Staff", "POST"))
+{
+<div class="form-group">
+    @Html.Label("Category Name", new { @class = "text-default" })
+    @Html.TextBoxFor(m => m.CategoryName, new { @class = "form-default" })
+    @Html.ValidationMessageFor(model => model.CategoryName, " *required", new { @class = "text-danger" })
+</div>
+                <br />
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" class="btn btn-primary" value="Create" />
+                                    </div>
+                                </div>}
+
+
+
